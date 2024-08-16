@@ -76,5 +76,4 @@ The Central Fitness Membership Application is more than just a gym management to
 
 ---
 
-**For more information, support, or to schedule a demo, contact us at [your-contact-email@example.com].**
 
