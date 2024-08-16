@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_report_form" model="ir.ui.view">
+        <field name="name">gym.report.form</field>
+        <field name="model">gym.report</field>
+        <field name="arch" type="xml">
+            <form string="Gym Report">
+                <sheet>
+                    <group>
+                        <field name="report_name"/>
+                        <field name="generated_on"/>
+                        <field name="data_summary"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_report_tree" model="ir.ui.view">
+        <field name="name">gym.report.tree</field>
+        <field name="model">gym.report</field>
+        <field name="arch" type="xml">
+            <tree string="Gym Reports">
+                <field name="report_name"/>
+                <field name="generated_on"/>
+                <field name="data_summary"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_gym_report" model="ir.actions.act_window">
+        <field name="name">Gym Reports</field>
+        <field name="res_model">gym.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_report_tree"/>
+    </record>
+
+    <menuitem id="menu_gym_report" name="Gym Reports" parent="menu_gym_member_root" action="action_gym_report"/>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_class_form" model="ir.ui.view">
+        <field name="name">gym.class.form</field>
+        <field name="model">gym.class</field>
+        <field name="arch" type="xml">
+            <form string="Gym Class">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="schedule_time"/>
+                        <field name="duration"/>
+                        <field name="trainer_id"/>
+                        <field name="max_participants"/>
+                        <field name="booked_members_ids" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_class_tree" model="ir.ui.view">
+        <field name="name">gym.class.tree</field>
+        <field name="model">gym.class</field>
+        <field name="arch" type="xml">
+            <tree string="Gym Classes">
+                <field name="name"/>
+                <field name="schedule_time"/>
+                <field name="duration"/>
+                <field name="trainer_id"/>
+                <field name="max_participants"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_gym_class" model="ir.actions.act_window">
+        <field name="name">Gym Classes</field>
+        <field name="res_model">gym.class</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_class_tree"/>
+    </record>
+
+    <menuitem id="menu_gym_class" name="Gym Classes" parent="menu_gym_member_root" action="action_gym_class"/>
+</odoo>

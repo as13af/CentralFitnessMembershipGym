@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gym_member_user,access_gym_member_user,model_gym_member,,1,1,1,1
+access_gym_membership_plan_user,access_gym_membership_plan_user,model_gym_membership_plan,,1,1,1,1
+access_res_partner_user,access_res_partner_user,model_res_partner,,1,0,0,0
+access_sale_order_user,access_sale_order_user,model_sale_order,,1,1,1,1
+access_gym_access_control_user,access_gym_access_control_user,model_gym_access_control,,1,1,1,1
+access_gym_class_user,access_gym_class_user,model_gym_class,,1,1,1,1
+access_gym_class_booking_user,access_gym_class_booking_user,model_gym_class_booking,,1,1,1,1
+access_gym_workout_history_user,access_gym_workout_history_user,model_gym_workout_history,,1,1,1,1
+access_gym_workout_exercise_user,access_gym_workout_exercise_user,model_gym_workout_exercise,,1,1,1,1
+access_gym_nutrition_history_user,access_gym_nutrition_history_user,model_gym_nutrition_history,,1,1,1,1
+access_gym_nutrition_meal_user,access_gym_nutrition_meal_user,model_gym_nutrition_meal,,1,1,1,1
+access_gym_report_user,access_gym_report_user,model_gym_report,,1,1,1,1

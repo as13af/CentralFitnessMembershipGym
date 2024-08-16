@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_class_booking_form" model="ir.ui.view">
+        <field name="name">gym.class.booking.form</field>
+        <field name="model">gym.class.booking</field>
+        <field name="arch" type="xml">
+            <form string="Gym Class Booking">
+                <sheet>
+                    <group>
+                        <field name="member_id"/>
+                        <field name="class_id"/>
+                        <field name="booking_date"/>
+                        <field name="status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_class_booking_tree" model="ir.ui.view">
+        <field name="name">gym.class.booking.tree</field>
+        <field name="model">gym.class.booking</field>
+        <field name="arch" type="xml">
+            <tree string="Gym Class Bookings">
+                <field name="member_id"/>
+                <field name="class_id"/>
+                <field name="booking_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_gym_class_booking" model="ir.actions.act_window">
+        <field name="name">Class Bookings</field>
+        <field name="res_model">gym.class.booking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_class_booking_tree"/>
+    </record>
+
+    <menuitem id="menu_gym_class_booking" name="Class Bookings" parent="menu_gym_member_root" action="action_gym_class_booking"/>
+</odoo>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_workout_history_form" model="ir.ui.view">
+        <field name="name">gym.workout.history.form</field>
+        <field name="model">gym.workout.history</field>
+        <field name="arch" type="xml">
+            <form string="Workout History">
+                <sheet>
+                    <group>
+                        <field name="member_id"/>
+                        <field name="workout_date"/>
+                        <field name="exercises_done"/>
+                        <field name="total_calories_burned" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Exercises">
+                            <field name="workout_exercise_ids">
+                                <tree editable="bottom">
+                                    <field name="exercise_name"/>
+                                    <field name="sets"/>
+                                    <field name="reps"/>
+                                    <field name="weight"/>
+                                    <field name="calories_burned"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_workout_history_tree" model="ir.ui.view">
+        <field name="name">gym.workout.history.tree</field>
+        <field name="model">gym.workout.history</field>
+        <field name="arch" type="xml">
+            <tree string="Workout History">
+                <field name="member_id"/>
+                <field name="workout_date"/>
+                <field name="total_calories_burned"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_gym_workout_history" model="ir.actions.act_window">
+        <field name="name">Workout History</field>
+        <field name="res_model">gym.workout.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_workout_history_tree"/>
+    </record>
+    
+    <record id="action_gym_workout_exercise" model="ir.actions.act_window">
+        <field name="name">Workout Exercises</field>
+        <field name="res_model">gym.workout.exercise</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_workout_exercise_tree"/>
+    </record>
+    
+    <menuitem id="menu_gym_workout_history" name="Workout History" parent="menu_gym_member_root" action="action_gym_workout_history"/>
+</odoo>

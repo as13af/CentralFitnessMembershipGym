@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_nutrition_meal_form" model="ir.ui.view">
+        <field name="name">gym.nutrition.meal.form</field>
+        <field name="model">gym.nutrition.meal</field>
+        <field name="arch" type="xml">
+            <form string="Nutrition Meal">
+                <sheet>
+                    <group>
+                        <field name="nutrition_history_id"/>
+                        <field name="meal_name"/>
+                        <field name="calories"/>
+                        <field name="protein"/>
+                        <field name="carbs"/>
+                        <field name="fats"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_nutrition_meal_tree" model="ir.ui.view">
+        <field name="name">gym.nutrition.meal.tree</field>
+        <field name="model">gym.nutrition.meal</field>
+        <field name="arch" type="xml">
+            <tree string="Nutrition Meals">
+                <field name="nutrition_history_id"/>
+                <field name="meal_name"/>
+                <field name="calories"/>
+                <field name="protein"/>
+                <field name="carbs"/>
+                <field name="fats"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="action_gym_nutrition_history" model="ir.actions.act_window">
+        <field name="name">Nutrition History</field>
+        <field name="res_model">gym.nutrition.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_nutrition_history_tree"/>
+    </record>
+    
+    <record id="action_gym_nutrition_meal" model="ir.actions.act_window">
+        <field name="name">Nutrition Meals</field>
+        <field name="res_model">gym.nutrition.meal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_gym_nutrition_meal_tree"/>
+    </record>
+    
+
+    <menuitem id="menu_gym_nutrition_meal" name="Nutrition Meals" parent="menu_gym_member_root" action="action_gym_nutrition_meal"/>
+</odoo>

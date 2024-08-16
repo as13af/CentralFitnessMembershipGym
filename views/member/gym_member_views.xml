@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_gym_member_form" model="ir.ui.view">
+        <field name="name">gym.member.form</field>
+        <field name="model">gym.member</field>
+        <field name="arch" type="xml">
+            <form string="Gym Member">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="membership_plan_id"/>
+                        <field name="join_date"/>
+                        <field name="expiry_date"/>
+                        <field name="active"/>
+                        <field name="access_token"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_gym_member_tree" model="ir.ui.view">
+        <field name="name">gym.member.tree</field>
+        <field name="model">gym.member</field>
+        <field name="arch" type="xml">
+            <tree string="Gym Member">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="membership_plan_id"/>
+                <field name="join_date"/>
+                <field name="expiry_date"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_gym_member_root" name="Gym Members" sequence="10"/>
+
+    <menuitem id="menu_gym_member" name="Members" parent="menu_gym_member_root" action="action_gym_member"/>
+</odoo>
